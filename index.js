@@ -446,10 +446,10 @@ function process_commands_query(query, mapKey, userid) {
             case 'помощь':
                 out = _CMD_HELP;
                 break;
-            case 'пропустить':
+            case 'пропусти':
                 out = _CMD_SKIP;
                 break;
-            case 'перемешать':
+            case 'перемешай':
                 out = _CMD_SHUFFLE;
                 break;
             case 'жанры':
@@ -483,7 +483,7 @@ function process_commands_query(query, mapKey, userid) {
                 }
                 break;
             case 'включи':
-            case 'player':
+            case 'включить':
                 switch(args) {
                     case 'random':
                         out = _CMD_RANDOM;
