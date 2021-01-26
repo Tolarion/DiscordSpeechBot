@@ -190,7 +190,7 @@ discordClient.on('ready', () => {
 })
 discordClient.login(DISCORD_TOK)
 
-const PREFIX = '!';
+const PREFIX = '$';
 const _CMD_HELP        = PREFIX + 'help';
 const _CMD_JOIN        = PREFIX + 'join';
 const _CMD_LEAVE       = PREFIX + 'leave';
@@ -436,42 +436,42 @@ function process_commands_query(query, mapKey, userid) {
 
     let out = null;
 
-    const regex = /^music ([a-zA-Z]+)(.+?)?$/;
+    const regex = /^музыка ([а-яА-Яa-zA-Z]+)(.+?)?$/;
     const m = query.match(regex);
     if (m && m.length) {
         const cmd = (m[1]||'').trim();
         const args = (m[2]||'').trim();
 
         switch(cmd) {
-            case 'help':
+            case 'помощь':
                 out = _CMD_HELP;
                 break;
-            case 'skip':
+            case 'пропустить':
                 out = _CMD_SKIP;
                 break;
-            case 'shuffle':
+            case 'перемешать':
                 out = _CMD_SHUFFLE;
                 break;
-            case 'genres':
+            case 'жанры':
                 out = _CMD_GENRES;
                 break;
-            case 'pause':
+            case 'пауза':
                 out = _CMD_PAUSE;
                 break;
-            case 'resume':
+            case 'продолжить':
                 out = _CMD_RESUME;
                 break;
-            case 'clear':
+            case 'очистить':
                 if (args == 'list')
                     out = _CMD_CLEAR;
                 break;
-            case 'list':
+            case 'список':
                 out = _CMD_QUEUE;
                 break;
-            case 'hello':
+            case 'привет':
                 out = 'hello back =)'
                 break;
-            case 'favorites':
+            case 'избранное':
                 out = _CMD_FAVORITES;
                 break;
             case 'set':
@@ -482,7 +482,7 @@ function process_commands_query(query, mapKey, userid) {
                         break;
                 }
                 break;
-            case 'play':
+            case 'включи':
             case 'player':
                 switch(args) {
                     case 'random':
